@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black">
+    <data>
+        <variable
+            name="v"
+            type="com.example.sweet.test.WeixinHeadActivity" />
+        <variable
+            name="m"
+            type="com.example.sweet.test.WeixinHeadModel" />
+    </data>
+
+    <com.example.sweet.views.BounceNestedScrollView
+        android:id="@+id/nsView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg" />
+
+            <ImageView
+                android:id="@+id/ivTopBlur"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ivBottomBlur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:layout_alignBottom="@+id/ivPic" />
+
+            <include
+                android:id="@+id/toolBar"
+                layout="@layout/layout_toolbar"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivPic"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_100dp"
+                    android:text="@string/test_str"
+                    android:textSize="@dimen/dimen_22sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@android:color/holo_red_dark"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_100dp"
+                    android:text="@string/test_str"
+                    android:textSize="@dimen/dimen_22sp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@android:color/holo_orange_dark"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_500dp"
+                    android:text="@string/test_str"
+                    android:textSize="@dimen/dimen_22sp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@android:color/holo_blue_dark"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.example.sweet.views.BounceNestedScrollView>
+</layout>
